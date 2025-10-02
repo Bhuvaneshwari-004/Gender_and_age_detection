@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Analytics Dashboard</h2>
+<div class="row">
+  <div class="col-md-6">
+    <canvas id="ageGenderChart"></canvas>
+  </div>
+  <div class="col-md-6">
+    <canvas id="timeTrendChart"></canvas>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Process detections data from server in JS and render Chart.js charts
+// For brevity, you'll adapt this to your backend data structure
+// Example:
+const detections = {{ detections|tojson }};
+const ages = {}, genders = {}, times = {};
+for(let det of detections){
+  // Count occurrences here
+}
+// Render pie/bar/time charts with Chart.js accordingly
+</script>
+{% endblock %}
